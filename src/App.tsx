@@ -1,7 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
-import { Home } from './common/components/Home';
-import { Welcome } from './common/components/Welcome';
-import './index.css';
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./common/components/Home";
+import { Welcome } from "./common/components/Welcome";
 
 export default function App() {
   return (
