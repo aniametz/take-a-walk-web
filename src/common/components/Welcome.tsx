@@ -2,8 +2,12 @@ import { useNavigate } from "react-router";
 
 export function Welcome(): JSX.Element {
   const navigate = useNavigate();
-  const handleSignIn = () => {};
-  const handleSignUp = () => {};
+  const handleSignIn = () => {
+    navigate("/sign-in");
+  };
+  const handleSignUp = () => {
+    navigate("/sign-up");
+  };
   const handleGuest = () => {
     navigate("/home");
   };
