@@ -4,6 +4,7 @@ import { SignIn } from "./common/components/SignIn";
 import { SignUp } from "./common/components/SignUp";
 import { ValidateEmail } from "./common/components/ValidateEmail";
 import { Welcome } from "./common/components/Welcome";
+import "./index.css";
 
 export default function App() {
   return (
