@@ -13,17 +13,17 @@ export function Welcome(): JSX.Element {
   };
 
   return (
-    <div className="main-container flex h-screen">
+    <div className="common-container flex h-screen">
       <div className="m-auto">
         <p className="main-header">Welcome! Take a Walk With Us.</p>
         <div className="auth-container">
-          <button className="auth-btn" onClick={handleSignIn}>
+          <button className="btn" onClick={handleSignIn}>
             Sign In
           </button>
-          <button className="auth-btn" onClick={handleSignUp}>
+          <button className="btn" onClick={handleSignUp}>
             Sign Up
           </button>
-          <button className="auth-btn" onClick={handleGuest}>
+          <button className="btn" onClick={handleGuest}>
             Guest
           </button>
         </div>

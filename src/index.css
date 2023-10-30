@@ -4,18 +4,50 @@
 
 @layer components {
   .main-container {
-    @apply flex h-screen;
+    @apply flex;
   }
 
   .main-header {
-    @apply text-5xl font-bold;
+    @apply text-5xl font-bold m-5;
   }
 
-  .auth-container {
+  .common-header {
+    @apply text-center text-3xl font-bold  m-5;
+  }
+
+  .common-container {
     @apply flex items-center;
   }
 
-  .auth-btn {
-    @apply w-32 text-center text-sm text-primary hover:text-secondary hover:font-bold m-5 px-5 py-2 border-2 rounded border-background hover:border-secondary;
+  .btn {
+    @apply w-32 text-center text-sm text-offWhite border-2 rounded-md bg-slate hover:font-bold hover:cursor-pointer m-5 px-5 py-2;
+  }
+
+  .form-container {
+    @apply items-center;
+  }
+
+  .form-input-container {
+    @apply flex flex-col content-around py-5;
+  }
+
+  .form-label {
+    @apply text-sm text-secondary font-bold px-1;
+  }
+
+  .form-input {
+    @apply border-2 border-secondary rounded-md px-1;
+  }
+
+  .form-alert {
+    @apply text-xs text-danger font-bold break-words px-1;
+  }
+
+  .empty-alert {
+    @apply text-background;
+  }
+
+  .submit-btn {
+    @apply btn m-0 my-5 py-1 w-full;
   }
 }

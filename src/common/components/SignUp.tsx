@@ -22,29 +22,44 @@ export function SignUp(): JSX.Element {
   };
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          label="Username"
-          type="text"
-          register={register}
-          errors={errors}
-        />
-        <Input label="Email" type="email" register={register} errors={errors} />
-        <Input
-          label="Password"
-          type="password"
-          register={register}
-          errors={errors}
-        />
-        <Input
-          label="Confirm Password"
-          type="password"
-          register={register}
-          errors={errors}
-        />
-        <input type="submit" aria-label="Sign Up" value={"Sign Up"} />
-      </form>
+    <div className="common-container">
+      <div className="m-auto w-4/12">
+        <p className="common-header">Sign Up</p>
+        <div className="form-container">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Input
+              label="Username"
+              type="text"
+              register={register}
+              errors={errors}
+            />
+            <Input
+              label="Email"
+              type="email"
+              register={register}
+              errors={errors}
+            />
+            <Input
+              label="Password"
+              type="password"
+              register={register}
+              errors={errors}
+            />
+            <Input
+              label="Confirm Password"
+              type="password"
+              register={register}
+              errors={errors}
+            />
+            <input
+              type="submit"
+              aria-label="Sign Up"
+              value={"Sign Up"}
+              className="submit-btn"
+            />
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

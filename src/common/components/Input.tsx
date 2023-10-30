@@ -11,10 +11,23 @@ interface InputProps {
 export function Input(props: InputProps): JSX.Element {
   const { label, type, register, errors } = props;
   return (
-    <div>
-      <label>{label}</label>
-      <input type={type} aria-label={label} {...register(label)} />
-      {errors[label] && <span role="alert">{errors[label]?.message}</span>}
+    <div className="form-input-container">
+      <label className="form-label">{label}</label>
+      <input
+        type={type}
+        aria-label={label}
+        {...register(label)}
+        className="form-input"
+      />
+      <div className="empty-alert">
+        {errors[label] ? (
+          <span role="alert" className="form-alert">
+            {errors[label]?.message}
+          </span>
+        ) : (
+          "."
+        )}
+      </div>
     </div>
   );
 }
