@@ -1,13 +1,15 @@
 import { joiResolver } from "@hookform/resolvers/joi";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
 
-import { submitSignUpData } from "../functions";
-import { IFormInput } from "../interfaces";
-import { schema, schemaOptions } from "../schemas";
-import { Input } from "./Input";
+import Input from "../components/Input";
+import { submitSignUpData } from "../utils/functions";
+import { IFormInput } from "../utils/interfaces";
+import { schema, schemaOptions } from "../utils/schemas";
 
-export function SignUp(): JSX.Element {
+import { useRouter } from "next/router";
+
+function SignUp(): JSX.Element {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -15,10 +17,9 @@ export function SignUp(): JSX.Element {
   } = useForm<IFormInput>({
     resolver: joiResolver(schema, schemaOptions),
   });
-  const navigate = useNavigate();
   const onSubmit: SubmitHandler<IFormInput> = (data: IFormInput) => {
     submitSignUpData(data);
-    navigate("/validate-email");
+    router.push("/validate-email");
   };
 
   return (
@@ -26,7 +27,7 @@ export function SignUp(): JSX.Element {
       <div className="m-auto w-4/12">
         <p className="common-header">Sign Up</p>
         <div className="form-container">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form noValidate onSubmit={handleSubmit(onSubmit)}>
             <Input
               label="Username"
               type="text"
@@ -63,3 +64,5 @@ export function SignUp(): JSX.Element {
     </div>
   );
 }
+
+export default SignUp;

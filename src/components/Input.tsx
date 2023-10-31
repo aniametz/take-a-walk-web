@@ -1,5 +1,5 @@
 import { FieldErrors, Path, UseFormRegister } from "react-hook-form";
-import { IFormInput } from "../interfaces";
+import { IFormInput } from "../utils/interfaces";
 
 interface InputProps {
   label: Path<IFormInput>;
@@ -8,8 +8,10 @@ interface InputProps {
   errors: FieldErrors<IFormInput>;
 }
 
-export function Input(props: InputProps): JSX.Element {
+function Input(props: InputProps): JSX.Element {
   const { label, type, register, errors } = props;
+
+  // console.log({ errors });
   return (
     <div className="form-input-container">
       <label className="form-label">{label}</label>
@@ -21,9 +23,9 @@ export function Input(props: InputProps): JSX.Element {
       />
       <div className="empty-alert">
         {errors[label] ? (
-          <span role="alert" className="form-alert">
+          <p role="alert" className="form-alert">
             {errors[label]?.message}
-          </span>
+          </p>
         ) : (
           "."
         )}
@@ -31,3 +33,5 @@ export function Input(props: InputProps): JSX.Element {
     </div>
   );
 }
+
+export default Input;

@@ -40,11 +40,11 @@
   }
 
   .form-alert {
-    @apply text-xs text-danger font-bold break-words px-1;
+    @apply text-xs text-danger font-bold break-words px-1  pointer-events-none;
   }
 
   .empty-alert {
-    @apply text-background;
+    @apply text-background pointer-events-none;
   }
 
   .submit-btn {
